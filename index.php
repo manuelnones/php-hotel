@@ -38,21 +38,29 @@ $hotels = [
     ],
 
 ];
-
 ?>
 
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PHP Hotel</title>
 </head>
 
 <body>
     <h1>Hotel</h1>
+    <?php
+    foreach ($hotels as $hotel) {
+        echo "<hr>";
+        foreach ($hotel as $key => $contentKey) {
+            echo "<strong>{$key}: </strong>{$contentKey}<br>";
+        }
+    }
+    ?>
 </body>
 
 </html>
