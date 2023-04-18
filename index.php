@@ -6,35 +6,35 @@ $hotels = [
         'description' => 'Hotel Belvedere Descrizione',
         'parking' => true,
         'vote' => 4,
-        'distance_to_center' => 10.4
+        'distance_to_center' => 10.4 . ' km'
     ],
     [
         'name' => 'Hotel Futuro',
         'description' => 'Hotel Futuro Descrizione',
         'parking' => true,
         'vote' => 2,
-        'distance_to_center' => 2
+        'distance_to_center' => 2 . ' km'
     ],
     [
         'name' => 'Hotel Rivamare',
         'description' => 'Hotel Rivamare Descrizione',
         'parking' => false,
         'vote' => 1,
-        'distance_to_center' => 1
+        'distance_to_center' => 1 . ' km'
     ],
     [
         'name' => 'Hotel Bellavista',
         'description' => 'Hotel Bellavista Descrizione',
         'parking' => false,
         'vote' => 5,
-        'distance_to_center' => 5.5
+        'distance_to_center' => 5.5 . ' km'
     ],
     [
         'name' => 'Hotel Milano',
         'description' => 'Hotel Milano Descrizione',
         'parking' => true,
         'vote' => 2,
-        'distance_to_center' => 50
+        'distance_to_center' => 50 . ' km'
     ],
 
 ];
@@ -53,14 +53,27 @@ $hotels = [
 
 <body>
     <h1>Hotel</h1>
+
     <?php
     foreach ($hotels as $hotel) {
         echo "<hr>";
+
         foreach ($hotel as $key => $contentKey) {
-            echo "<strong>{$key}: </strong>{$contentKey}<br>";
+
+            if ($key != 'parking') {
+                echo "<strong>{$key}: </strong>{$contentKey}<br>";
+
+            } else {
+                if ($hotel['parking'] == true) {
+                    echo "<strong>{$key}:</strong> disponibile<br>";
+                } else {
+                    echo "<strong>{$key}:</strong> non disponibile<br>";
+                }
+            }
         }
     }
     ?>
+
 </body>
 
 </html>
