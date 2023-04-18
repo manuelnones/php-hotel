@@ -40,6 +40,29 @@ $hotels = [
 ];
 ?>
 
+<style>
+    h1 {
+        margin: auto;
+        width: 200px;
+    }
+
+    table {
+        border-collapse: collapse;
+        display: inline-block;
+    }
+
+    td,
+    th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    th {
+        color: darkblue;
+
+    }
+</style>
+
 
 <!DOCTYPE html>
 <html lang="it">
@@ -61,13 +84,37 @@ $hotels = [
         foreach ($hotel as $key => $contentKey) {
 
             if ($key != 'parking') {
-                echo "<strong>{$key}: </strong>{$contentKey}<br>";
-
+                echo "<table style= color: red>
+                        <tr>
+                            <th>{$key}</th>
+                        </tr>
+                        <tr>
+                            <td>{$contentKey}</td>
+                        </tr>
+                    </table>";
+                // echo "<strong>{$key}: </strong>{$contentKey}<br>";
+    
             } else {
                 if ($hotel['parking'] == true) {
-                    echo "<strong>{$key}:</strong> disponibile<br>";
+                    echo "<table>
+                            <tr>
+                                <th>{$key}</th>
+                            </tr>
+                            <tr>
+                                <td> disponibile </td>
+                            </tr>
+                        </table>";
+                    // echo "<strong>{$key}:</strong> disponibile";
                 } else {
-                    echo "<strong>{$key}:</strong> non disponibile<br>";
+                    echo "<table>
+                            <tr>
+                                <th>{$key}</th>
+                            </tr>
+                            <tr>
+                                <td> non disponibile </td>
+                            </tr>
+                        </table>";
+                    // echo "<strong>{$key}:</strong> non disponibile";
                 }
             }
         }
