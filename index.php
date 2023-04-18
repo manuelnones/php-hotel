@@ -92,8 +92,7 @@ $hotels = [
                             <td>{$contentKey}</td>
                         </tr>
                     </table>";
-                // echo "<strong>{$key}: </strong>{$contentKey}<br>";
-    
+
             } else {
                 if ($hotel['parking'] == true) {
                     echo "<table>
@@ -104,7 +103,6 @@ $hotels = [
                                 <td> disponibile </td>
                             </tr>
                         </table>";
-                    // echo "<strong>{$key}:</strong> disponibile";
                 } else {
                     echo "<table>
                             <tr>
@@ -114,7 +112,6 @@ $hotels = [
                                 <td> non disponibile </td>
                             </tr>
                         </table>";
-                    // echo "<strong>{$key}:</strong> non disponibile";
                 }
             }
         }
